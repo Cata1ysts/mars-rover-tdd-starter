@@ -144,4 +144,15 @@ public class MarsRoverTest {
 
     }
 
+    @Test
+    public void Test_Combined_command(){
+        //given
+        MarsRover marsRover = new MarsRover(-1,0, DIRECTION.E);
+        String result = "(-2,1) E";
+        //when
+        marsRover.execute("BLMR");
+        //then
+        assertEquals(result,marsRover.report());
+    }
+
 }
