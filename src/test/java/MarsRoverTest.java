@@ -129,4 +129,19 @@ public class MarsRoverTest {
 
     }
 
+    @Test
+    public void Comprehensive_Test(){
+        //given
+        MarsRover marsRover = new MarsRover(-1,0, DIRECTION.E);
+        String result = "(-2,1) E";
+        //when
+        marsRover.execute("B");
+        marsRover.execute("L");
+        marsRover.execute("M");
+        marsRover.execute("R");
+        //then
+        assertEquals(result,marsRover.report());
+
+    }
+
 }
