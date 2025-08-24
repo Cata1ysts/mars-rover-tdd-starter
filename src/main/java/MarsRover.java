@@ -20,6 +20,13 @@ public class MarsRover {
             else this.x--;
         }else if(command.equals("L")){
             this.direction=this.direction.Anticlockwise();
+        }else if(command.equals("R")){
+            this.direction=this.direction.Clockwise();
+        }else if(command.equals("B")){
+            if(this.direction==DIRECTION.S) this.y++;
+            else if(this.direction==DIRECTION.N) this.y--;
+            else if(this.direction==DIRECTION.E) this.x--;
+            else this.x++;
         }
     }
 
