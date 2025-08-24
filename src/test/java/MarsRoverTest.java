@@ -18,10 +18,43 @@ public class MarsRoverTest {
         assertEquals(direction.name(),marsRover.getDirection());
     }
     @Test
-    public void Test_Command_M(){
+    public void Test_Command_M_from_S(){
         //given
         MarsRover marsRover = new MarsRover(0,0, DIRECTION.S);
         String result = "(0,-1) S";
+        //when
+        marsRover.execute("M");
+        //then
+        assertEquals(result,marsRover.report());
+
+    }
+    @Test
+    public void Test_Command_M_from_N(){
+        //given
+        MarsRover marsRover = new MarsRover(0,0, DIRECTION.N);
+        String result = "(0,1) N";
+        //when
+        marsRover.execute("M");
+        //then
+        assertEquals(result,marsRover.report());
+
+    }
+    @Test
+    public void Test_Command_M_from_W(){
+        //given
+        MarsRover marsRover = new MarsRover(1,2, DIRECTION.W);
+        String result = "(0,2) W";
+        //when
+        marsRover.execute("M");
+        //then
+        assertEquals(result,marsRover.report());
+
+    }
+    @Test
+    public void Test_Command_M_from_E(){
+        //given
+        MarsRover marsRover = new MarsRover(6,3, DIRECTION.E);
+        String result = "(7,3) E";
         //when
         marsRover.execute("M");
         //then
