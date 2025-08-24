@@ -106,4 +106,27 @@ public class MarsRoverTest {
 
     }
 
+    @Test
+    public void Test_Command_B_from_N(){
+        //given
+        MarsRover marsRover = new MarsRover(6,3, DIRECTION.N);
+        String result = "(6,2) N";
+        //when
+        marsRover.execute("B");
+        //then
+        assertEquals(result,marsRover.report());
+
+    }
+    @Test
+    public void Test_Command_B_from_E(){
+        //given
+        MarsRover marsRover = new MarsRover(6,23, DIRECTION.E);
+        String result = "(5,23) E";
+        //when
+        marsRover.execute("B");
+        //then
+        assertEquals(result,marsRover.report());
+
+    }
+
 }
