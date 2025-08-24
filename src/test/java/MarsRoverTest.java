@@ -14,7 +14,18 @@ public class MarsRoverTest {
 
         //then
         assertEquals(x,marsRover.getX());
-        assertEquals(x,marsRover.getY());
-        assertEquals(x,marsRover.getDirection());
+        assertEquals(y,marsRover.getY());
+        assertEquals(direction.name(),marsRover.getDirection());
+    }
+    @Test
+    public void Test_Command_M(){
+        //given
+        MarsRover marsRover = new MarsRover(0,0, DIRECTION.S);
+        String result = "(0,-1) S";
+        //when
+        marsRover.execute("M");
+        //then
+        assertEquals(result,marsRover.report());
+
     }
 }
