@@ -3,6 +3,7 @@ public enum DIRECTION {
     E,
     S,
     W;
+
     public DIRECTION Clockwise() {
         // 获取当前枚举值的下一个索引
         int nextOrdinal = (this.ordinal() + 1) % DIRECTION.values().length;
