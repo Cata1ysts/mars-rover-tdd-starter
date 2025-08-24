@@ -18,6 +18,8 @@ public class MarsRover {
             else if(this.direction==DIRECTION.N) this.y++;
             else if(this.direction==DIRECTION.E) this.x++;
             else this.x--;
+        }else if(command.equals("L")){
+            this.direction=this.direction.Anticlockwise();
         }
     }
 
