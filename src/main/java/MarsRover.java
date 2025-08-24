@@ -12,21 +12,24 @@ public class MarsRover {
     String getDirection(){return this.direction.name();}
 
 
-    public void execute(String command) {
-        if(command.equals("M")){
-            if(this.direction==DIRECTION.S) this.y--;
-            else if(this.direction==DIRECTION.N) this.y++;
-            else if(this.direction==DIRECTION.E) this.x++;
-            else this.x--;
-        }else if(command.equals("L")){
-            this.direction=this.direction.Anticlockwise();
-        }else if(command.equals("R")){
-            this.direction=this.direction.Clockwise();
-        }else if(command.equals("B")){
-            if(this.direction==DIRECTION.S) this.y++;
-            else if(this.direction==DIRECTION.N) this.y--;
-            else if(this.direction==DIRECTION.E) this.x--;
-            else this.x++;
+    public void execute(String commands) {
+        for (int idx = 0; idx < commands.length(); idx++) {
+            char command = commands.charAt(idx);
+            if(command=='M'){
+                if(this.direction==DIRECTION.S) this.y--;
+                else if(this.direction==DIRECTION.N) this.y++;
+                else if(this.direction==DIRECTION.E) this.x++;
+                else this.x--;
+            }else if(command=='L'){
+                this.direction=this.direction.Anticlockwise();
+            }else if(command=='R'){
+                this.direction=this.direction.Clockwise();
+            }else if(command=='B'){
+                if(this.direction==DIRECTION.S) this.y++;
+                else if(this.direction==DIRECTION.N) this.y--;
+                else if(this.direction==DIRECTION.E) this.x--;
+                else this.x++;
+            }
         }
     }
 
